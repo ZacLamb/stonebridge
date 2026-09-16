@@ -1,0 +1,28 @@
+<%- include('../partials/head') %>
+<%- include('../partials/nav') %>
+<section class="page-hero">
+  <div class="wrap">
+    <ol class="crumbs"><li><a href="/">Home</a></li><li>FAQ</li></ol>
+    <h1>Questions, answered plainly</h1>
+    <p class="lede">Cost, speed, credit, documents, and what it means to work with a broker. If yours is not here, <a href="/contact">ask us directly</a>.</p>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap two-col" style="grid-template-columns: .8fr 1.6fr">
+    <nav aria-label="FAQ sections">
+      <ul class="broker-points" style="margin:0">
+        <% faqs.forEach((g, i) => { %><li><a href="#faq-<%= i %>"><%= g.group %></a></li><% }) %>
+      </ul>
+    </nav>
+    <div>
+      <% faqs.forEach((g, i) => { %>
+      <div class="faq-group" id="faq-<%= i %>">
+        <h2><%= g.group %></h2>
+        <% g.items.forEach(f => { %><details><summary><%= f[0] %></summary><p><%= f[1] %></p></details><% }) %>
+      </div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+<%- include('../partials/cta') %>
+<%- include('../partials/footer') %>

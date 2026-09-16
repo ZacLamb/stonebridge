@@ -1,0 +1,12 @@
+<section class="cta-band">
+  <div class="wrap cta-inner">
+    <div>
+      <h2><%= typeof ctaTitle !== 'undefined' ? ctaTitle : 'Find out what the business qualifies for.' %></h2>
+      <p><%= typeof ctaText !== 'undefined' ? ctaText : 'Five minutes to apply. No cost, no obligation, and a specialist follows up the same business day.' %></p>
+    </div>
+    <div class="cta-actions">
+      <a class="btn btn-brass btn-lg" href="/apply">Start an application</a>
+      <a class="btn btn-ghost-light btn-lg" href="<%= site.phoneHref %>">Call <%= site.phone %></a>
+    </div>
+  </div>
+</section>

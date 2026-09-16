@@ -1,0 +1,27 @@
+<header class="site-header" id="top">
+  <div class="wrap header-inner">
+    <a class="brand" href="/" aria-label="Stone Bridge Funding Group home">
+      <img class="logo" src="/img/logo.png" alt="Stone Bridge Funding Group" width="1457" height="768">
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="primary-nav" id="primary-nav">
+      <ul>
+        <% site.nav.forEach(item => { const active = path === item.href || (item.children && path.startsWith(item.href)); %>
+        <li class="<%= item.children ? 'has-children' : '' %> <%= active ? 'active' : '' %>">
+          <a href="<%= item.href %>"><%= item.label %></a>
+          <% if (item.children) { %>
+          <ul class="sub">
+            <% item.children.forEach(c => { %><li><a href="<%= c.href %>" <%= path === c.href ? 'aria-current="page"' : '' %>><%= c.label %></a></li><% }) %>
+          </ul>
+          <% } %>
+        </li>
+        <% }) %>
+        <li class="nav-phone"><a href="<%= site.phoneHref %>"><%= site.phone %></a></li>
+        <li class="nav-cta"><a class="btn btn-brass" href="/apply">Start an application</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="main">

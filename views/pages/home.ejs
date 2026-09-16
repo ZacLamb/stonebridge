@@ -1,0 +1,108 @@
+<%- include('../partials/head') %>
+<%- include('../partials/nav') %>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <h1>Banks take six weeks to say no. We take two days to say yes.</h1>
+        <p class="lede">Stone Bridge places merchant cash advances, term loans, credit lines, and business credit cards for owners who need capital this week — not next quarter.</p>
+        <div class="hero-actions">
+          <a class="btn btn-brass btn-lg" href="/apply">Start an application</a>
+          <a class="btn btn-ghost-light btn-lg" href="#estimate">See what you could qualify for</a>
+        </div>
+        <p class="hero-fine">No cost to apply. Terms and approval are set by the funding partner.</p>
+      </div>
+      <div class="hero-art">
+        <img class="hero-mark" src="/img/logo-mark.png" alt="" width="968" height="474">
+        <div class="hero-caption">
+          <div><strong>24–72 hrs</strong>Typical time to funding</div>
+          <div><strong>$10k–$5M</strong>Across four products</div>
+          <div><strong>Same day</strong>First answer on your file</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-waterline"></div>
+  </div>
+</section>
+
+<section class="section" id="products">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Four ways to get money into the business</h2>
+      <p>Each one solves a different problem. We will tell you which fits — and if the honest answer is "none of them yet," we will tell you that too.</p>
+    </div>
+    <div class="ledger">
+      <div class="ledger-head"><span>Product</span><span>Best for</span><span>Time to funding</span><span>Amounts</span><span></span></div>
+      <% products.forEach(p => { %>
+      <a class="ledger-row" href="/funding/<%= p.slug %>">
+        <span class="ledger-name"><%= p.name %><small><%= p.lede.split('.')[0] %>.</small></span>
+        <span class="ledger-cell hide-sm"><b><%= p.bestFor %></b></span>
+        <span class="ledger-cell hide-sm hide-md"><b><%= p.speed %></b></span>
+        <span class="ledger-cell hide-sm hide-md"><b><%= p.glance[0][1] %></b></span>
+        <span class="ledger-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<div class="course" aria-hidden="true"></div>
+
+<section class="section section-light" id="estimate">
+  <div class="wrap two-col">
+    <div>
+      <h2>What an advance could look like</h2>
+      <p class="lede">Drag the slider to your average monthly revenue. This is the rule-of-thumb range used across the merchant cash advance industry.</p>
+      <p class="muted">Your real offer depends on time in business, industry, and what the statements show. The point of this is to tell you in ten seconds whether it is worth a five-minute application.</p>
+      <a class="btn btn-slate" href="/funding/merchant-cash-advance">How an advance works</a>
+    </div>
+    <div class="calc">
+      <div class="calc-readout">
+        <label for="rev" class="label">Average monthly revenue</label>
+        <output id="rev-out" for="rev">$50,000 / month</output>
+      </div>
+      <input type="range" id="rev" min="10000" max="500000" step="5000" value="50000" aria-label="Average monthly revenue">
+      <div class="calc-result">
+        <span class="label">Estimated advance range</span>
+        <output id="est-out">$25,000 – $75,000</output>
+      </div>
+      <p class="calc-fine">Illustrative only. Not an offer of credit.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark" id="how">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>From application to funded, in four steps</h2>
+      <p>Most files get a first answer the same business day. The full path, start to finish, is usually 24 to 72 hours.</p>
+    </div>
+    <ol class="steps">
+      <li><h3>Apply</h3><p>A five-minute application and four months of bank statements is enough to start.</p></li>
+      <li><h3>Match</h3><p>We place the file with the funder suited to your revenue, time in business, and industry.</p></li>
+      <li><h3>Compare</h3><p>You see real terms side by side before you sign anything. No obligation to accept.</p></li>
+      <li><h3>Get funded</h3><p>Once signed, funds are typically deposited within 24 to 72 hours.</p></li>
+    </ol>
+    <p style="margin-top:36px"><a class="btn btn-brass" href="/how-it-works">See the full process</a></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap two-col">
+    <div>
+      <h2>Placing a deal? We'll work it with you.</h2>
+      <p class="lede">Stone Bridge partners with brokers and ISOs on MCA, term, and credit line submissions. Send a file over and you will know within the day whether it is fundable.</p>
+      <a class="btn btn-slate" href="/brokers">Broker &amp; ISO program</a>
+    </div>
+    <ul class="broker-points">
+      <li><b>Commission paid on funding</b>Not on approval — on money that actually moves.</li>
+      <li><b>Direct underwriter access</b>No call center, no ticket queue. You talk to the person deciding.</li>
+      <li><b>Same-day answers</b>You will know if a file is fundable before end of day.</li>
+      <li><b>Your merchant stays yours</b>We do not market to your clients. Ever.</li>
+    </ul>
+  </div>
+</section>
+
+<%- include('../partials/cta', { ctaTitle: 'Tell us about the business.', ctaText: 'Fill out the application and a funding specialist follows up — usually the same business day. Prefer to talk first? Call us.' }) %>
+<%- include('../partials/footer') %>

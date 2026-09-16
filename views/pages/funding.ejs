@@ -1,0 +1,46 @@
+<%- include('../partials/head') %>
+<%- include('../partials/nav') %>
+<section class="page-hero">
+  <div class="wrap">
+    <ol class="crumbs"><li><a href="/">Home</a></li><li>Funding</li></ol>
+    <h1>Four products, side by side</h1>
+    <p class="lede">Same application, four very different structures. Here is how they compare on the things that actually matter: how much, how fast, how repaid, and who qualifies.</p>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap">
+    <div class="compare-wrap">
+    <table class="compare">
+      <thead><tr><th></th><% products.forEach(p => { %><th><a href="/funding/<%= p.slug %>"><%= p.name %></a></th><% }) %></tr></thead>
+      <tbody>
+        <% const rows = products[0].glance.map(g => g[0]); rows.forEach((label, i) => { %>
+        <tr><th><%= label === 'Amounts' || label === 'Limits' ? 'Amounts' : label %></th><% products.forEach(p => { %><td><%= p.glance[i][1] %></td><% }) %></tr>
+        <% }) %>
+        <tr><th>Best for</th><% products.forEach(p => { %><td><%= p.bestFor %></td><% }) %></tr>
+        <tr><th></th><% products.forEach(p => { %><td><a href="/funding/<%= p.slug %>">Full details</a></td><% }) %></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="form-fine">Ranges reflect files we typically place and are illustrative. Actual terms are set by the funding partner after underwriting.</p>
+  </div>
+</section>
+<section class="section section-light">
+  <div class="wrap two-col">
+    <div>
+      <h2>Not sure which one?</h2>
+      <p class="lede">Most owners are not, and that is fine. Pick "Not sure yet" on the application. We look at the statements and come back with the one or two that fit, with the trade-offs spelled out.</p>
+      <a class="btn btn-slate" href="/apply">Start an application</a>
+    </div>
+    <div>
+      <h3>A rough guide</h3>
+      <ul class="broker-points">
+        <li><b>Need it this week</b>Merchant cash advance.</li>
+        <li><b>Buying something big, want a monthly payment</b>Term loan.</li>
+        <li><b>Customers pay slowly, need a cushion</b>Line of credit.</li>
+        <li><b>New business or everyday spend</b>Business credit cards.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<%- include('../partials/cta') %>
+<%- include('../partials/footer') %>

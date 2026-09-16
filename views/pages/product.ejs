@@ -1,0 +1,72 @@
+<%- include('../partials/head') %>
+<%- include('../partials/nav') %>
+
+<section class="page-hero">
+  <div class="wrap">
+    <ol class="crumbs"><li><a href="/">Home</a></li><li><a href="/funding">Funding</a></li><li><%= product.name %></li></ol>
+    <h1><%= product.name %></h1>
+    <p class="lede"><%= product.lede %></p>
+    <div class="hero-actions">
+      <a class="btn btn-brass btn-lg" href="/apply?product=<%= product.slug %>">Apply for this</a>
+      <a class="btn btn-ghost-light btn-lg" href="#fit">Is it right for me?</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap product-grid">
+    <div>
+      <h2 id="fit">Who this is for</h2>
+      <div class="fit">
+        <div>
+          <h3>A good fit if</h3>
+          <ul class="fit-good"><% product.goodFit.forEach(g => { %><li><%= g %></li><% }) %></ul>
+        </div>
+        <div>
+          <h3>Probably not if</h3>
+          <ul class="fit-poor"><% product.poorFit.forEach(g => { %><li><%= g %></li><% }) %></ul>
+        </div>
+      </div>
+
+      <h2>How repayment works</h2>
+      <p class="measure"><%= product.howRepaid %></p>
+
+      <h2 style="margin-top:2em">What you'll need</h2>
+      <ul class="docs"><% product.docs.forEach(d => { %><li><%= d %></li><% }) %></ul>
+
+      <h2 style="margin-top:2em">Questions people ask about this</h2>
+      <% product.faqs.forEach(f => { %>
+      <details><summary><%= f[0] %></summary><p><%= f[1] %></p></details>
+      <% }) %>
+    </div>
+
+    <aside class="glance">
+      <h3>At a glance</h3>
+      <dl>
+        <% product.glance.forEach(g => { %>
+        <div class="glance-row"><dt><%= g[0] %></dt><dd><%= g[1] %></dd></div>
+        <% }) %>
+      </dl>
+      <div class="glance-foot">
+        <a class="btn btn-brass btn-block" href="/apply?product=<%= product.slug %>">Apply for a <%= product.short.toLowerCase() %></a>
+        <p class="form-fine">Ranges reflect files we typically place. Your terms are set by the funding partner.</p>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<div class="course" aria-hidden="true"></div>
+
+<section class="section section-light">
+  <div class="wrap">
+    <div class="section-head"><h2>Not the right shape? Compare the other three.</h2></div>
+    <div class="others">
+      <% others.forEach(o => { %>
+      <a class="other-card" href="/funding/<%= o.slug %>"><b><%= o.name %></b><span>Best for <%= o.bestFor.toLowerCase() %> · <%= o.speed %></span></a>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<%- include('../partials/cta') %>
+<%- include('../partials/footer') %>

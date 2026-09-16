@@ -1,0 +1,68 @@
+<%- include('../partials/head') %>
+<%- include('../partials/nav') %>
+<section class="page-hero">
+  <div class="wrap">
+    <ol class="crumbs"><li><a href="/">Home</a></li><li>For brokers &amp; ISOs</li></ol>
+    <h1>Placing a deal? We'll work it with you.</h1>
+    <p class="lede">Stone Bridge partners with brokers and ISOs on MCA, term loan, and line of credit submissions. Send a file and you will know within the day whether it is fundable — and at what.</p>
+    <div class="hero-actions">
+      <a class="btn btn-brass btn-lg" href="#submit">Submit a deal</a>
+      <a class="btn btn-ghost-light btn-lg" href="mailto:<%= site.email %>?subject=Broker%20submission">Email a file</a>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap two-col">
+    <div>
+      <h2>How we work with partners</h2>
+      <p class="lede">We built this program around the three complaints every broker has: slow answers, commissions that never show up, and funders who go around you to the merchant.</p>
+      <p>You keep the relationship. We work the file with our funding partners, get you real terms fast, and pay on funding. If a file is not fundable, we say so the same day instead of letting it sit.</p>
+    </div>
+    <ul class="broker-points">
+      <li><b>Commission paid on funding</b>Not on approval — on money that actually moves. Paid the same week the deal funds.</li>
+      <li><b>Direct underwriter access</b>No call center, no ticket queue. You talk to the person making the decision.</li>
+      <li><b>Same-day answers</b>Send a complete file before 2pm ET and you have an answer by end of day.</li>
+      <li><b>Non-circumvention, in writing</b>Your merchant stays yours. We do not solicit, remarket, or renew around you.</li>
+      <li><b>Renewals credited to you</b>When your merchant renews, you are paid on the renewal.</li>
+    </ul>
+  </div>
+</section>
+<div class="course" aria-hidden="true"></div>
+<section class="section section-light">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>What we place</h2>
+      <p>We fund across the credit spectrum. Send the A paper and the C paper — different partners for each.</p>
+    </div>
+    <div class="stats">
+      <div><strong>MCA</strong><span>$10k–$2M, all positions, 500+ FICO considered</span></div>
+      <div><strong>Term</strong><span>$25k–$5M, 2+ years in business, 650+ preferred</span></div>
+      <div><strong>LOC</strong><span>$10k–$500k revolving, 1+ year in business</span></div>
+      <div><strong>Cards</strong><span>0% stacks to $150k on strong personal credit</span></div>
+    </div>
+  </div>
+</section>
+<section class="section" id="submit">
+  <div class="wrap two-col">
+    <div>
+      <h2>Submit a deal</h2>
+      <p class="lede">Send the application and four months of statements. We confirm receipt within the hour and come back with fundability the same day.</p>
+      <p>Prefer email? Send the package to <a href="mailto:<%= site.email %>?subject=Broker%20submission"><%= site.email %></a> with the merchant name in the subject line. Or call <a href="<%= site.phoneHref %>"><%= site.phone %></a>.</p>
+    </div>
+    <form class="form-card" method="post" action="/contact">
+      <input type="hidden" name="kind" value="broker_submission">
+      <div class="form-grid">
+        <div><label for="b-name">Your name</label><input type="text" id="b-name" name="full_name" required></div>
+        <div><label for="b-company">Your company</label><input type="text" id="b-company" name="business_name" required></div>
+        <div><label for="b-phone">Phone</label><input type="tel" id="b-phone" name="phone" required></div>
+        <div><label for="b-email">Email</label><input type="email" id="b-email" name="email" required></div>
+        <div class="full"><label for="b-merchant">Merchant name and monthly revenue</label><input type="text" id="b-merchant" name="merchant" placeholder="e.g. Acme Roofing, $85k/mo" required></div>
+        <div class="full"><label for="b-notes">Deal notes</label><textarea id="b-notes" name="message" placeholder="Product, position, existing balances, anything the underwriter should know."></textarea></div>
+        <div class="hp"><label>Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+        <div class="full"><button class="btn btn-brass btn-lg btn-block" type="submit">Send the deal</button></div>
+      </div>
+      <p class="form-fine">We will reply with a secure upload link for statements. Please do not attach statements to the initial email.</p>
+    </form>
+  </div>
+</section>
+<%- include('../partials/footer') %>

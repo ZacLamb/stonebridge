@@ -1,0 +1,40 @@
+</main>
+<footer class="site-footer">
+  <div class="course" aria-hidden="true"></div>
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="/"><img class="logo logo-footer" src="/img/logo-white.png" alt="Stone Bridge Funding Group" width="1457" height="768"></a>
+      <p><%= site.tagline %></p>
+      <p class="footer-contact"><a href="<%= site.phoneHref %>"><%= site.phone %></a><br><a href="mailto:<%= site.email %>"><%= site.email %></a><br><%= site.hours %></p>
+    </div>
+    <div>
+      <h4>Funding</h4>
+      <ul><% products.forEach(p => { %><li><a href="/funding/<%= p.slug %>"><%= p.name %></a></li><% }) %><li><a href="/funding">Compare all four</a></li></ul>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <ul>
+        <li><a href="/how-it-works">How it works</a></li>
+        <li><a href="/brokers">For brokers &amp; ISOs</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/faq">FAQ</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Get started</h4>
+      <ul>
+        <li><a href="/apply">Start an application</a></li>
+        <li><a href="/brokers#submit">Submit a deal</a></li>
+        <li><a href="/privacy">Privacy policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer-legal">
+    <p><%= site.disclaimer %></p>
+    <p>© <%= year %> <%= site.name %>. All rights reserved.</p>
+  </div>
+</footer>
+<script src="/js/main.js" defer></script>
+</body>
+</html>

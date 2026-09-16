@@ -1,0 +1,19 @@
+<%- include('../partials/head') %>
+<%- include('../partials/nav') %>
+<section class="page-hero"><div class="wrap"><ol class="crumbs"><li><a href="/">Home</a></li><li>Privacy</li></ol><h1>Privacy policy</h1><p class="lede">What we collect, why, and who sees it.</p></div></section>
+<section class="section"><div class="wrap prose">
+  <p class="muted">Last updated <%= new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' }) %></p>
+  <h2>Information we collect</h2>
+  <p>When you apply or contact us, we collect the information you provide: your name, business name, phone number, email address, revenue range, time in business, and the details of your request. If you proceed with an application, you may also provide bank statements, identification, and other underwriting documents.</p>
+  <h2>How we use it</h2>
+  <p>We use this information to evaluate your request, match you with funding partners, communicate with you about your application, and comply with legal obligations. By submitting a form you agree to be contacted by phone, text message, or email about your request. You may opt out of marketing communications at any time.</p>
+  <h2>Who we share it with</h2>
+  <p>To obtain offers, we share your application and supporting documents with the lenders and funding partners we believe are suited to your file. Each partner's use of your information is governed by their own privacy policy. We do not sell your personal information to third parties.</p>
+  <h2>Security and retention</h2>
+  <p>We use industry-standard safeguards to protect your information and retain it only as long as needed for the purposes above and as required by law. Please send bank statements only through the secure upload link we provide, not by email.</p>
+  <h2>Your choices</h2>
+  <p>You may request access to, correction of, or deletion of your information by emailing <a href="mailto:<%= site.email %>"><%= site.email %></a>. We will respond within a reasonable period, subject to legal retention requirements.</p>
+  <h2>Contact</h2>
+  <p>Questions about this policy: <a href="mailto:<%= site.email %>"><%= site.email %></a> or <a href="<%= site.phoneHref %>"><%= site.phone %></a>.</p>
+</div></section>
+<%- include('../partials/footer') %>
