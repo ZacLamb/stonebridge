@@ -11,7 +11,7 @@ Node/Express + EJS. No build step. Deploys to Railway from GitHub with zero conf
 
 ## Edit content
 
-- `data/site.js` — phone, email, hours, nav, footer disclaimer. **Update the placeholder phone number here.**
+- `data/site.js` — phone, email, hours, nav, footer disclaimer. 
 - `data/products.js` — the four funding products (ranges, fit lists, docs, FAQs). Each entry generates `/funding/<slug>`.
 - `data/faqs.js` — FAQ page.
 - `views/pages/*.ejs` — page templates. `views/partials/` — header, footer, CTA band.

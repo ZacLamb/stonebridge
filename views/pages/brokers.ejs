@@ -49,7 +49,7 @@
       <p class="lede">Send the application and four months of statements. We confirm receipt within the hour and come back with fundability the same day.</p>
       <p>Prefer email? Send the package to <a href="mailto:<%= site.email %>?subject=Broker%20submission"><%= site.email %></a> with the merchant name in the subject line. Or call <a href="<%= site.phoneHref %>"><%= site.phone %></a>.</p>
     </div>
-    <form class="form-card" method="post" action="/api/contact">
+    <form class="form-card" method="post" action="/contact">
       <input type="hidden" name="kind" value="broker_submission">
       <div class="form-grid">
         <div><label for="b-name">Your name</label><input type="text" id="b-name" name="full_name" required></div>

@@ -3,8 +3,8 @@ module.exports = {
   shortName: 'Stone Bridge',
   domain: 'https://stonebridgefundinggroup.com',
   tagline: 'Business funding, placed directly.',
-  phone: '(513) 000-0000',
-  phoneHref: 'tel:+15130000000',
+  phone: '(678) 650-2801',
+  phoneHref: 'tel:+16786502801',
   email: 'hello@stonebridgefundinggroup.com',
   hours: 'Monday – Friday, 9am – 6pm ET',
   nav: [
